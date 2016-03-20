@@ -39,15 +39,15 @@ def lorenz_coupled((x1, y1, z1, x2, y2, z2, x3, y3, z3), t0, models, coeffs):
 	m, c = models, coeffs
 	m1, m2, m3 = m[0], m[1], m[2]
 
-	xx1 = m1.a * (y1 - z1) + c.cx12 * (x2 - x1) + c.cx13 * (x3 - x1)
+	xx1 = m1.a * (y1 - x1) + c.cx12 * (x2 - x1) + c.cx13 * (x3 - x1)
 	yy1 = x1 * (m1.b - z1) - y1 + c.cy12 * (y2 - y1) + c.cy13 * (y3 - y1)
 	zz1 = x1 * y1 - m1.c * z1 + c.cz12 * (z2 - z1) + c.cz13 * (z3 - z1)
 
-	xx2 = m2.a * (y2 - z2) + c.cx21 * (x1 - x2) + c.cx23 * (x3 - x2)
+	xx2 = m2.a * (y2 - x2) + c.cx21 * (x1 - x2) + c.cx23 * (x3 - x2)
 	yy2 = x2 * (m2.b - z2) - y2 + c.cy21 * (y1 - y2) + c.cy23 * (y3 - y2)
 	zz2 = x2 * y2 - m2.c * z2 + c.cz21 * (z1 - z2) + c.cz23 * (z3 - z2)
 
-	xx3 = m3.a * (y3 - z3) + c.cx31 * (x1 - x3) + c.cx32 * (x2 - x3)
+	xx3 = m3.a * (y3 - x3) + c.cx31 * (x1 - x3) + c.cx32 * (x2 - x3)
 	yy3 = x3 * (m3.b - z3) - y3 + c.cy31 * (y1 - y3) + c.cy32 * (y2 - y3)
 	zz3 = x3 * y3 - m3.c * z3 + c.cz31 * (z1 - z3) + c.cz32 * (z2 - z3)
 
